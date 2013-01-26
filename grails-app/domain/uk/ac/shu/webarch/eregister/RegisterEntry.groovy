@@ -10,7 +10,12 @@ class RegisterEntry {
   Student student
 
   /* The register being signed */
-  RegistrationSheet regSheet
+
+  /** 
+   * TODO:
+   * Add a property called regSheet of type RegistrationSheet
+   * use the mapping facility to make the column name in the database 'reg_sheet_fk'
+   */
 
   /* Date/Time of the signing */
   Long timestamp
@@ -28,6 +33,5 @@ class RegisterEntry {
   static mapping = {
     table 'student_register_entry'
     student column: 'student_fk'
-    regSheet column: 'reg_sheet_fk'
   }
 }

@@ -4,6 +4,7 @@ class Student {
 
   String fullStudentName
   String studentNumber
+  String notes
 
   /* The courses this student is enrolled on */
   Set courses
@@ -24,6 +25,10 @@ class Student {
     classAtts:'student'
   ]
 
+  /**
+   * TODO:
+   * Make the notes field use the "text" type, and name the column "student_notes" in the database
+   */
   static constraints = {
     fullStudentName(nullable:false, blank:false,maxSize:256);
     studentNumber(nullable:false, blank:false,maxSize:256);
