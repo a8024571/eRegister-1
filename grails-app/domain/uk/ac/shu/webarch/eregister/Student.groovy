@@ -5,6 +5,8 @@ class Student {
   String fullStudentName
   String studentNumber
 
-    static constraints = {
-    }
+  static constraints = {
+    fullStudentName(nullable:false, blank:false,maxSize:256);
+    studentNumber(nullable:false, blank:false,maxSize:256);
+  }
 }
