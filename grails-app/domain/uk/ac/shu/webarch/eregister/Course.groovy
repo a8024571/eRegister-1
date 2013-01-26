@@ -21,9 +21,15 @@ class Course {
   String courseCode
   String description
 
+  /* The set of classes where this course is being taught */
+  Set classes
+
   static constraints = {
     courseCode maxSize: 20
   }
+
+  static hasMany = [classes: RegClass]
+  static mappedBy = [classes: 'course']
 
   // Note  here how we change the SQL column name for description from the default "description" to
   // "course_desc" and the datatype from the convention-generated varchar to the LOB text type
