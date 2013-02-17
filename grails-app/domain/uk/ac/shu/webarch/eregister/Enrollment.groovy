@@ -16,7 +16,7 @@ package uk.ac.shu.webarch.eregister
 class Enrollment {
 
   Student student
-  Course course
+  RegClass regClass
 
   static constraints = {
   }
@@ -24,6 +24,6 @@ class Enrollment {
   static mapping = {
     table 'course_student'
     student column: 'student_fk'
-    course column: 'course_fk'
+    regClass column: 'reg_class_fk'
   }
 }

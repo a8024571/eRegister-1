@@ -20,6 +20,7 @@ class Course {
   String courseName
   String courseCode
   String description
+  int myIntProp=1
 
   /* The set of classes where this course is being taught */
   Set classes
