@@ -24,6 +24,6 @@ class Enrollment {
   static mapping = {
     table 'course_student'
     student column: 'student_fk'
-    course column: 'reg_class_fk'
+    regClass column: 'reg_class_fk'
   }
 }
