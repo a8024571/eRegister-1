@@ -37,13 +37,13 @@ class BootStrap {
                   new Student(studentNumber:'D111', fullStudentName:'Student Freda', notes:'Student Freda Notes').save();
 
     
-    def student_a_web_arch = Enrollment.lookupOrCreateByStudentAndRegClass(student:student_a,regClass:monday_pm_class)
+    def student_a_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_a,monday_pm_class)
 
-    def student_b_web_arch = Enrollment.lookupOrCreateByStudentAndRegClass(student:student_b,regClass:monday_pm_class)
+    def student_b_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_b,monday_pm_class)
 
-    def student_c_web_arch = Enrollment.lookupOrCreateByStudentAndRegClass(student:student_c,regClass:tuesday_pm_class)
+    def student_c_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_c,tuesday_pm_class)
 
-    def student_d_web_arch = Enrollment.lookupOrCreateByStudentAndRegClass(student:student_c,regClass:tuesday_pm_class)
+    def student_d_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_c,tuesday_pm_class)
   }
 
   def destroy = {
