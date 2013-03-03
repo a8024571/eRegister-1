@@ -10,12 +10,7 @@ class RegisterEntry {
   Student student
 
   /* The register being signed */
-
-  /** 
-   * TODO:
-   * Add a property called regSheet of type RegistrationSheet
-   * use the mapping facility to make the column name in the database 'reg_sheet_fk'
-   */
+  RegistrationSheet regSheet
 
   /* Date/Time of the signing */
   Long timestamp

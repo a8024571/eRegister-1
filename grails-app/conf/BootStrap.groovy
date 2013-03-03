@@ -9,7 +9,7 @@ class BootStrap {
     def ian_instructor = Instructor.findByStaffId('646345d') ?: new Instructor(staffId:'646345d', name:'Ian Ibbotson').save();
     def matthew_instructor = Instructor.findByStaffId('253425') ?: new Instructor(staffId:'253425', name:'Matthew Love').save();
 
-    def web_arch_course = Course.findByCourseCode('443343dd') ?: new Course(courseCode:'443343dd', 
+    def web_arch_course = Course.findByCourseCode('55-5571-00L-A-20123') ?: new Course(courseCode:'55-5571-00L-A-20123', 
                                                                             courseName:'Web Architectures', 
                                                                             description:'Headache for students').save();
 

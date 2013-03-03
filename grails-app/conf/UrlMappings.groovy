@@ -4,7 +4,7 @@ class UrlMappings {
                 "/classes"(controller:'classes', action:'index')
                 name courseHome: "/classes/$courseCode" (controller:'classes', action:'courseHome')
                 name classHome: "/classes/$courseCode/$classCode" (controller:'classes', action:'classHome')
-                name clsact: "/classes/$courseCode/$classCode/$action" ( controller:'classes' )
+                name sheetHome: "/classes/$courseCode/$classCode/$sheetCode" (controller:'classes', action:'sheetHome')
 
 		"/$controller/$action?/$id?"{
 			constraints {

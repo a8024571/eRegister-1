@@ -17,6 +17,8 @@ class RegistrationSheet {
   /* Any notes */
   String notes
 
+  static hasMany = [signatories:RegisterEntry]
+  static mappedBy = [signatories:'regSheet']
   /** TODO:
    *  Add the metadata needed to add a list if RegisterEntry classes for this sheet... essentially
    *  modelling the fact that 1 registration sheet has many register entries.
