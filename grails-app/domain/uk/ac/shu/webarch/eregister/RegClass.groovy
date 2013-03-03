@@ -26,17 +26,6 @@ class RegClass {
   Set enrolledSudents
   Set registrationSheets
 
-  /*
-   *   TODO
-   *   THIS CLASS NEEDS a hasMany adding for the enrolledStudents set above. 
-   *
-   *   this will be a set of "Enrollment" objects
-   * 
-   *   This class will also need a mapped by section so that the class knows 
-   *   to use the "student" property of the Enrollment class as the foreign key
-   *   
-   */ 
-
   static hasMany = [
     enrolledStudents:Enrollment, registrationSheets:RegistrationSheet
   ]

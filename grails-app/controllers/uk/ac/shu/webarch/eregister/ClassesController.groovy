@@ -45,6 +45,8 @@ class ClassesController {
       response.sendError(404)   
     }
 
+    result.sheetsSoFar = result.cls.registrationSheets.size();
+
     println("classHome - method was ${request.method} shortcode=${params.shortcode}");
 
     switch ( request.method ) {
@@ -59,8 +61,27 @@ class ClassesController {
         println("Create new sheet");
         break;
     }
+
+    result.studentStats = generateStudentStats(result.cls, result.sheetsSoFar)
  
     result
+  }
+
+  def generateStudentStats(class_info, possible) {
+    // Create a list containing each student and their attendance for this class
+    def result = []
+    class_info.enrolledStudents.each { es ->
+      def student_info = [:]
+      student_info.student = es.student;
+      def student_attendance_query = RegisterEntry.where { student == es.student && regSheet.regClass == class_info };      
+      student_info.classesAttended = student_attendance_query.list().size()
+      println("classes attended: ${student_info.classesAttended} / ${possible}");
+      if ( possible > 0 )
+        student_info.attendance = student_info.classesAttended / possible * 100
+
+      result.add(student_info)
+    }
+    return result;
   }
 
   def sheetHome() {

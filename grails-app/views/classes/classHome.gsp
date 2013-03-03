@@ -6,6 +6,7 @@
     Course : ${cls.course.courseName}<br/>
     Class code : ${cls.code}<br/>
     Taught By : ${cls.classInstructor?.name}<br/>
+    Sheet Count To Date : ${sheetsSoFar}<br/>
     <hr/>
     Current Sheets
     <g:form mapping="classHome" params="${[courseCode:cls.course.courseCode,classCode:cls.code]}" method="POST">
@@ -25,11 +26,22 @@
     </table>
     
     <hr/>
-    Students
+    Students...
     <table>
-      <g:each in="${cls.enrolledSudents}" var="student">
+      <tr> 
+        <td>Student Number</td>
+        <td>Name</td>
+        <td>Classes Present</td>
+        <td>Possible</td>
+        <td>%</td>
+      </tr>
+      <g:each in="${studentStats}" var="student">
         <tr>
-          <td>${student.name}</td>
+          <td>${student.student.studentNumber}</td>
+          <td>${student.student.fullStudentName}</td>
+          <td>${student.classesAttended}</td>
+          <td>${sheetsSoFar}</td>
+          <td>${student.attendance}</td>
         </tr>
       </g:each>    
     </table>

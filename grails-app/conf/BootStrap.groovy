@@ -49,14 +49,33 @@ class BootStrap {
     def student_d = Student.findByStudentNumber('D111') ?:
                   new Student(studentNumber:'D111', fullStudentName:'Student Freda', notes:'Student Freda Notes').save();
 
-    
+    def student_e = Student.findByStudentNumber('E111') ?:
+                  new Student(studentNumber:'E111', fullStudentName:'Student Janine', notes:'Student Janine Notes').save();
+
+    def student_f = Student.findByStudentNumber('F111') ?:
+                  new Student(studentNumber:'F111', fullStudentName:'Student Graham', notes:'Student Graham Notes').save();
+
+    def student_g = Student.findByStudentNumber('G111') ?:
+                  new Student(studentNumber:'G111', fullStudentName:'Student Wibble', notes:'Student Wibble Notes').save();
+
+    println("Find or create by...")
+
     def student_a_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_a,monday_pm_class)
 
-    def student_b_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_b,monday_pm_class)
+    def student_b_web_arch = Enrollment.findOrSaveByStudentAndRegClass(student_b,monday_pm_class)
 
-    def student_c_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_c,tuesday_pm_class)
+    def student_c_web_arch = Enrollment.findOrSaveByStudentAndRegClass(student_c,tuesday_pm_class)
 
-    def student_d_web_arch = Enrollment.findOrCreateByStudentAndRegClass(student_c,tuesday_pm_class)
+    def student_d_web_arch = Enrollment.findOrSaveByStudentAndRegClass(student_d,tuesday_pm_class)
+
+    def student_e_web_arch = Enrollment.findOrSaveByStudentAndRegClass(student_e,tuesday_pm_class)
+
+    def student_f_web_arch = Enrollment.findOrSaveByStudentAndRegClass(student_f,monday_pm_class)
+
+    def student_g_web_arch = Enrollment.findOrSaveByStudentAndRegClass(student_g,tuesday_pm_class)
+
+    println("Done...");
+
   }
 
   def destroy = {

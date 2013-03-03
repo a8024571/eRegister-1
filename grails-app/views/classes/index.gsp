@@ -6,6 +6,7 @@
       <thead>
         <tr>
           <td>Course Name</td>
+          <td>Course Code</td>
           <td>Class Name</td>
           <td>Instructor</td>
         </tr>
@@ -14,7 +15,9 @@
         <g:each in="${classList}" var="c">
           <tr>
             <td><g:link mapping="courseHome"
-                        params="${[courseCode:c.courseCode]}">${c.courseName} ${c.courseCode}</g:link></td>
+                        params="${[courseCode:c.courseCode]}">${c.courseName}</g:link></td>
+            <td><g:link mapping="courseHome"
+                        params="${[courseCode:c.courseCode]}">${c.courseCode}</g:link></td>
             <td><g:link mapping="classHome"
                         params="${[courseCode:c.courseCode,classCode:c.classCode]}">${c.className}</g:link></td>
             <td>${c.instructorName}</td>
