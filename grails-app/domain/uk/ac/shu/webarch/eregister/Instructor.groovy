@@ -41,6 +41,6 @@ class Instructor {
   /* We set some constraints, max size and what fields can be blank or null */
   static constraints = {
     name(nullable:false, blank:false,maxSize:256);
-    staffId(nullable:false, blank:false,maxSize:20);
+    staffId(nullable:false, blank:false,maxSize:20, unique:true);
   }
 }
