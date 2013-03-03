@@ -13,6 +13,9 @@ class RegClass {
   /* Class name */
   String name
 
+  /* Class code - Used in URLs to generate short clean COOL URLs */
+  String code
+
   /* Instructor teaching this class */
   Instructor classInstructor
 
@@ -21,6 +24,7 @@ class RegClass {
 
   /* The set of students enrolled on this class */
   Set enrolledSudents
+  Set registrationSheets
 
   /*
    *   TODO
@@ -34,9 +38,11 @@ class RegClass {
    */ 
 
   static hasMany = [
+    enrolledStudents:Enrollment, registrationSheets:RegistrationSheet
   ]
 
   static mappedBy = [
+    enrolledStudents:'regClass', registrationSheets:'regClass'
   ]
 
   static constraints = {

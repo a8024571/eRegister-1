@@ -14,15 +14,28 @@ class BootStrap {
                                                                             description:'Headache for students').save();
 
  
-    def monday_pm_class = RegClass.findByCourseAndName(web_arch_course, 'WebArch-Mondays') ?: 
-                  new RegClass(name:'WebArch-Mondays',
+    def im_course = Course.findByCourseCode('443343d4') ?: new Course(courseCode:'443343d4', 
+                                                                            courseName:'Interactive Multimedia', 
+                                                                            description:'Interactive Multimedia').save();
+
+    def monday_pm_class = RegClass.findByCourseAndCode(web_arch_course, 'WebArchOne') ?: 
+                  new RegClass(name:'Web Architectures Group One',
+                               code:'WebArchOne',
                                classInstructor:ian_instructor, 
                                course:web_arch_course).save();
 
-    def tuesday_pm_class = RegClass.findByCourseAndName(web_arch_course, 'WebArch-Mondays') ?: 
-                  new RegClass(name:'WebArch-Tuesday',
+    def tuesday_pm_class = RegClass.findByCourseAndCode(web_arch_course, 'WebArchTwo') ?: 
+                  new RegClass(name:'Web Architectures Group Two',
+                               code:'WebArchTwo',
                                classInstructor:ian_instructor, 
                                course:web_arch_course).save();
+
+    def inter_multi_c1 = RegClass.findByCourseAndCode(im_course, 'IMOne') ?:
+                  new RegClass(name:'Interactive Multimedia Group One',
+                               code:'IMOne',
+                               classInstructor:matthew_instructor,
+                               course:im_course).save();
+
 
     def student_a = Student.findByStudentNumber('A111') ?:
                   new Student(studentNumber:'A111', fullStudentName:'Student Fred', notes:'Student Fred Notes').save();

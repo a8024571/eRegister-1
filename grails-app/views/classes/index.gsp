@@ -13,8 +13,10 @@
       <tbody>
         <g:each in="${classList}" var="c">
           <tr>
-            <td>${c.courseName}</td>
-            <td>${c.className}</td>
+            <td><g:link mapping="courseHome"
+                        params="${[courseCode:c.courseCode]}">${c.courseName} ${c.courseCode}</g:link></td>
+            <td><g:link mapping="classHome"
+                        params="${[courseCode:c.courseCode,classCode:c.classCode]}">${c.className}</g:link></td>
             <td>${c.instructorName}</td>
           </tr>
         </g:each>
