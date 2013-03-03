@@ -23,4 +23,14 @@ class ClassesController {
       json { render result as JSON }
     }
   }
+
+  def courseHome() {
+    def result = [:]
+    println("ClassesController::courseHome");
+  }
+
+  def classHome() {
+    def result = [:]
+    println("ClassesController::classHome");
+  }
 }
