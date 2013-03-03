@@ -23,4 +23,6 @@ Some info here about how to run the project
 
 ## What I learned / what I enoyed
 
-I really enjoyed the domain modelling part of the project, particularly creating the domain classes and working with the database. I found the view parts a little harder as I'm not visually minded.
+* I really enjoyed the domain modelling part of the project, particularly creating the domain classes and working with the database. I found the view parts a little harder as I'm not visually minded. The relationships on the domain classes were hardest to get right, but I found commenting up the domain classes really helped. For example, see: https://github.com/acesii/eRegister/blob/lectures/grails-app/domain/uk/ac/shu/webarch/eregister/Student.groovy
+
+
